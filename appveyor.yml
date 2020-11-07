@@ -13,22 +13,22 @@ build_script:
   - mkdir database
   - bin\1cv8t.exe CREATEINFOBASE File=%CD%/database
   - bin\1cv8t.exe DESIGNER /F %CD%/database /LoadExternalDataProcessorOrReportFromFiles AFViewer.xml AFViewer.epf /Out AFViewer.log
-  - 7z a InetAFV.zip inetpub
+  - 7z a inetpub.zip inetpub
 
 cache:
   - 1cv8t.7z
 
 artifacts:
   - path: AFViewer.epf
-  - path: InetAFV.zip
   - path: AFViewer.log
+  - path: inetpub.zip
 
 deploy:
   - provider: GitHub
     auth_token:
       secure: v7P89NQ2I5+WGNNdhpFrZEt6OCTPf8A8VSC5rttZMXh3DJ2fTChNEjZ1Wvm3kfBt
     repository: lintest/AFViewer1C
-    artifact: AFViewer.epf, InetAFV.zip
+    artifact: AFViewer.epf, inetpub.zip
     draft: true
     prerelease: true
     force_update: true
