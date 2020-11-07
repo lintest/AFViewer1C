@@ -112,24 +112,69 @@
 					</ToolTip>
 					<ExtendedTooltip name="СтраницаКонструкцииРасширеннаяПодсказка" id="76"/>
 					<ChildItems>
-						<UsualGroup name="ГруппаВыборЦвета" id="88">
+						<UsualGroup name="ГруппаОбображение" id="88">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа выбор цвета</v8:content>
+									<v8:content>Группа обображение</v8:content>
 								</v8:item>
 							</Title>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа выбор цвета</v8:content>
+									<v8:content>Группа обображение</v8:content>
 								</v8:item>
 							</ToolTip>
 							<HorizontalStretch>false</HorizontalStretch>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаВыборЦветаРасширеннаяПодсказка" id="89"/>
+							<ExtendedTooltip name="ГруппаОбображениеРасширеннаяПодсказка" id="89"/>
 							<ChildItems>
+								<CommandBar name="ПанельВидимость" id="183">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Панель видимость</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Панель видимость</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ПанельВидимостьРасширеннаяПодсказка" id="184"/>
+									<ChildItems>
+										<ButtonGroup name="ГруппаКнопокВидимость" id="185">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа кнопок видимость</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа кнопок видимость</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>Compact</Representation>
+											<ExtendedTooltip name="ГруппаКнопокВидимостьРасширеннаяПодсказка" id="186"/>
+											<ChildItems>
+												<Button name="УстановитьФлажки" id="181">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.УстановитьФлажки</CommandName>
+													<ExtendedTooltip name="УстановитьФлажкиРасширеннаяПодсказка" id="182"/>
+												</Button>
+												<Button name="СнятьФлажки" id="179">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.СнятьФлажки</CommandName>
+													<ExtendedTooltip name="СнятьФлажкиРасширеннаяПодсказка" id="180"/>
+												</Button>
+											</ChildItems>
+										</ButtonGroup>
+									</ChildItems>
+								</CommandBar>
 								<InputField name="Цвет" id="85">
 									<DataPath>Цвет</DataPath>
 									<Width>10</Width>
@@ -181,13 +226,15 @@
 										</ButtonGroup>
 									</ChildItems>
 								</CommandBar>
-								<InputField name="ИдКонструкции" id="119">
-									<DataPath>ИдКонструкции</DataPath>
-									<ReadOnly>true</ReadOnly>
-									<Width>24</Width>
-									<HorizontalStretch>true</HorizontalStretch>
-									<ContextMenu name="ИдКонструкцииКонтекстноеМеню" id="120"/>
-									<ExtendedTooltip name="ИдКонструкцииРасширеннаяПодсказка" id="121"/>
+								<InputField name="Модель" id="82">
+									<DataPath>Модель</DataPath>
+									<Width>16</Width>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ContextMenu name="МодельКонтекстноеМеню" id="83"/>
+									<ExtendedTooltip name="МодельРасширеннаяПодсказка" id="84"/>
+									<Events>
+										<Event name="OnChange">МодельПриИзменении</Event>
+									</Events>
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
@@ -288,63 +335,91 @@
 										</ColumnGroup>
 									</ChildItems>
 								</Table>
-								<Table name="Свойства" id="122">
-									<Representation>Tree</Representation>
-									<CommandBarLocation>None</CommandBarLocation>
-									<ReadOnly>true</ReadOnly>
-									<AutoInsertNewRow>true</AutoInsertNewRow>
-									<EnableStartDrag>true</EnableStartDrag>
-									<EnableDrag>true</EnableDrag>
-									<DataPath>Свойства</DataPath>
-									<ContextMenu name="СвойстваКонтекстноеМеню" id="123"/>
-									<AutoCommandBar name="СвойстваКоманднаяПанель" id="124"/>
-									<ExtendedTooltip name="СвойстваРасширеннаяПодсказка" id="125"/>
-									<SearchStringAddition name="СвойстваСтрокаПоиска" id="126">
-										<AdditionSource>
-											<Item>Свойства</Item>
-											<Type>SearchStringRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="СвойстваСтрокаПоискаКонтекстноеМеню" id="127"/>
-										<ExtendedTooltip name="СвойстваСтрокаПоискаРасширеннаяПодсказка" id="128"/>
-									</SearchStringAddition>
-									<ViewStatusAddition name="СвойстваСостояниеПросмотра" id="129">
-										<AdditionSource>
-											<Item>Свойства</Item>
-											<Type>ViewStatusRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="СвойстваСостояниеПросмотраКонтекстноеМеню" id="130"/>
-										<ExtendedTooltip name="СвойстваСостояниеПросмотраРасширеннаяПодсказка" id="131"/>
-									</ViewStatusAddition>
-									<SearchControlAddition name="СвойстваУправлениеПоиском" id="132">
-										<AdditionSource>
-											<Item>Свойства</Item>
-											<Type>SearchControl</Type>
-										</AdditionSource>
-										<ContextMenu name="СвойстваУправлениеПоискомКонтекстноеМеню" id="133"/>
-										<ExtendedTooltip name="СвойстваУправлениеПоискомРасширеннаяПодсказка" id="134"/>
-									</SearchControlAddition>
+								<UsualGroup name="ГруппаСвойства" id="187">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа свойства</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа свойства</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаСвойстваРасширеннаяПодсказка" id="188"/>
 									<ChildItems>
-										<InputField name="СвойстваНаименование" id="135">
-											<DataPath>Свойства.Наименование</DataPath>
-											<EditMode>EnterOnInput</EditMode>
-											<ContextMenu name="СвойстваНаименованиеКонтекстноеМеню" id="136"/>
-											<ExtendedTooltip name="СвойстваНаименованиеРасширеннаяПодсказка" id="137"/>
-										</InputField>
-										<InputField name="СвойстваЗначение" id="138">
-											<DataPath>Свойства.Значение</DataPath>
-											<EditMode>EnterOnInput</EditMode>
-											<ContextMenu name="СвойстваЗначениеКонтекстноеМеню" id="139"/>
-											<ExtendedTooltip name="СвойстваЗначениеРасширеннаяПодсказка" id="140"/>
-										</InputField>
-										<InputField name="СвойстваЕдИзм" id="174">
-											<DataPath>Свойства.ЕдИзм</DataPath>
-											<EditMode>EnterOnInput</EditMode>
-											<Width>6</Width>
-											<ContextMenu name="СвойстваЕдИзмКонтекстноеМеню" id="175"/>
-											<ExtendedTooltip name="СвойстваЕдИзмРасширеннаяПодсказка" id="176"/>
+										<Table name="Свойства" id="122">
+											<Representation>Tree</Representation>
+											<CommandBarLocation>None</CommandBarLocation>
+											<ReadOnly>true</ReadOnly>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<DataPath>Свойства</DataPath>
+											<ContextMenu name="СвойстваКонтекстноеМеню" id="123"/>
+											<AutoCommandBar name="СвойстваКоманднаяПанель" id="124"/>
+											<ExtendedTooltip name="СвойстваРасширеннаяПодсказка" id="125"/>
+											<SearchStringAddition name="СвойстваСтрокаПоиска" id="126">
+												<AdditionSource>
+													<Item>Свойства</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="СвойстваСтрокаПоискаКонтекстноеМеню" id="127"/>
+												<ExtendedTooltip name="СвойстваСтрокаПоискаРасширеннаяПодсказка" id="128"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="СвойстваСостояниеПросмотра" id="129">
+												<AdditionSource>
+													<Item>Свойства</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="СвойстваСостояниеПросмотраКонтекстноеМеню" id="130"/>
+												<ExtendedTooltip name="СвойстваСостояниеПросмотраРасширеннаяПодсказка" id="131"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="СвойстваУправлениеПоиском" id="132">
+												<AdditionSource>
+													<Item>Свойства</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="СвойстваУправлениеПоискомКонтекстноеМеню" id="133"/>
+												<ExtendedTooltip name="СвойстваУправлениеПоискомРасширеннаяПодсказка" id="134"/>
+											</SearchControlAddition>
+											<ChildItems>
+												<InputField name="СвойстваНаименование" id="135">
+													<DataPath>Свойства.Наименование</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="СвойстваНаименованиеКонтекстноеМеню" id="136"/>
+													<ExtendedTooltip name="СвойстваНаименованиеРасширеннаяПодсказка" id="137"/>
+												</InputField>
+												<InputField name="СвойстваЗначение" id="138">
+													<DataPath>Свойства.Значение</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="СвойстваЗначениеКонтекстноеМеню" id="139"/>
+													<ExtendedTooltip name="СвойстваЗначениеРасширеннаяПодсказка" id="140"/>
+												</InputField>
+												<InputField name="СвойстваЕдИзм" id="174">
+													<DataPath>Свойства.ЕдИзм</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>6</Width>
+													<ContextMenu name="СвойстваЕдИзмКонтекстноеМеню" id="175"/>
+													<ExtendedTooltip name="СвойстваЕдИзмРасширеннаяПодсказка" id="176"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+										<InputField name="ИдКонструкции" id="119">
+											<DataPath>ИдКонструкции</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Width>24</Width>
+											<HorizontalStretch>true</HorizontalStretch>
+											<ContextMenu name="ИдКонструкцииКонтекстноеМеню" id="120"/>
+											<ExtendedTooltip name="ИдКонструкцииРасширеннаяПодсказка" id="121"/>
 										</InputField>
 									</ChildItems>
-								</Table>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -435,19 +510,20 @@
 					</ToolTip>
 					<ExtendedTooltip name="СтраницаНастройкиРасширеннаяПодсказка" id="78"/>
 					<ChildItems>
-						<InputField name="Модель" id="82">
-							<DataPath>Модель</DataPath>
-							<ListChoiceMode>true</ListChoiceMode>
-							<ContextMenu name="МодельКонтекстноеМеню" id="83"/>
-							<ExtendedTooltip name="МодельРасширеннаяПодсказка" id="84"/>
-							<Events>
-								<Event name="OnChange">МодельПриИзменении</Event>
-							</Events>
+						<InputField name="ИдентификаторДокумента" id="70">
+							<DataPath>ИдентификаторДокумента</DataPath>
+							<ContextMenu name="ИдентификаторДокументаКонтекстноеМеню" id="71"/>
+							<ExtendedTooltip name="ИдентификаторДокументаРасширеннаяПодсказка" id="72"/>
 						</InputField>
-						<InputField name="ИдДок" id="70">
-							<DataPath>ИдДок</DataPath>
-							<ContextMenu name="ИдДокКонтекстноеМеню" id="71"/>
-							<ExtendedTooltip name="ИдДокРасширеннаяПодсказка" id="72"/>
+						<InputField name="ИдентификаторКлиента" id="192">
+							<DataPath>ИдентификаторКлиента</DataPath>
+							<ContextMenu name="ИдентификаторКлиентаКонтекстноеМеню" id="193"/>
+							<ExtendedTooltip name="ИдентификаторКлиентаРасширеннаяПодсказка" id="194"/>
+						</InputField>
+						<InputField name="АдресПриложения" id="189">
+							<DataPath>АдресПриложения</DataPath>
+							<ContextMenu name="АдресПриложенияКонтекстноеМеню" id="190"/>
+							<ExtendedTooltip name="АдресПриложенияРасширеннаяПодсказка" id="191"/>
 						</InputField>
 						<InputField name="Токен" id="79">
 							<DataPath>Токен</DataPath>
@@ -470,7 +546,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Токен</v8:content>
+					<v8:content>Токен авторизации</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -481,11 +557,11 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ИдДок" id="3">
+		<Attribute name="ИдентификаторДокумента" id="3">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Ид док</v8:content>
+					<v8:content>Идентификатор документа</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -585,7 +661,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Модель</v8:content>
+					<v8:content>Вид</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -740,6 +816,36 @@
 				</Column>
 			</Columns>
 		</Attribute>
+		<Attribute name="ИдентификаторКлиента" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор клиента</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресПриложения" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес приложения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ЗапуститьБраузер" id="2">
@@ -876,6 +982,46 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ОбновитьВыделение</Action>
+		</Command>
+		<Command name="УстановитьФлажки" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьФлажки</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="СнятьФлажки" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнятьФлажки</Action>
+			<Representation>Picture</Representation>
 		</Command>
 	</Commands>
 </Form>
