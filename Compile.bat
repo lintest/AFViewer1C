@@ -1,0 +1,1 @@
+oscript .\tools\Compile.os .\
