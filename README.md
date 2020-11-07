@@ -15,5 +15,10 @@
 6. Указываем в параметрах внешней обработки идентификаторы клиента и модели.
 
 ![](img/example001.png =310x297)
-
 ![](img/example002.png =310x297)
+
+
+
+<img src="img/example001.png" width="310"/>
+
+<img src="img/example002.png" width="310"/>
