@@ -12,11 +12,6 @@
 				<CommandName>Form.Command.LoginAutodesk</CommandName>
 				<ExtendedTooltip name="ФормаПолучитьТокенРасширеннаяПодсказка" id="142"/>
 			</Button>
-			<Button name="ФормаПолучитьВыделенные" id="177">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.Command.ПолучитьВыделенные</CommandName>
-				<ExtendedTooltip name="ФормаПолучитьВыделенныеРасширеннаяПодсказка" id="178"/>
-			</Button>
 			<ButtonGroup name="ГруппаКнопокБраузер" id="147">
 				<Title>
 					<v8:item>
@@ -75,6 +70,11 @@
 					</Button>
 				</ChildItems>
 			</ButtonGroup>
+			<Button name="ФормаПолучитьВыделенные" id="177">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПолучитьВыделенные</CommandName>
+				<ExtendedTooltip name="ФормаПолучитьВыделенныеРасширеннаяПодсказка" id="178"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -215,6 +215,12 @@
 												<Button name="ИзменитьЦвет" id="90">
 													<Type>CommandBarButton</Type>
 													<CommandName>Form.Command.ИзменитьЦвет</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Изменить</v8:content>
+														</v8:item>
+													</Title>
 													<ExtendedTooltip name="ИзменитьЦветРасширеннаяПодсказка" id="91"/>
 												</Button>
 												<Button name="ОригинальныйЦвет" id="92">
@@ -228,7 +234,7 @@
 								</CommandBar>
 								<InputField name="Модель" id="82">
 									<DataPath>Модель</DataPath>
-									<Width>16</Width>
+									<Width>10</Width>
 									<ListChoiceMode>true</ListChoiceMode>
 									<ContextMenu name="МодельКонтекстноеМеню" id="83"/>
 									<ExtendedTooltip name="МодельРасширеннаяПодсказка" id="84"/>
@@ -260,6 +266,7 @@
 									<CommandBarLocation>None</CommandBarLocation>
 									<ChangeRowSet>false</ChangeRowSet>
 									<ChangeRowOrder>false</ChangeRowOrder>
+									<HeightInTableRows>4</HeightInTableRows>
 									<RowSelectionMode>Row</RowSelectionMode>
 									<AutoInsertNewRow>true</AutoInsertNewRow>
 									<EnableStartDrag>true</EnableStartDrag>
@@ -310,6 +317,7 @@
 													<v8:content>Конструкции группа</v8:content>
 												</v8:item>
 											</ToolTip>
+											<Width>5</Width>
 											<Group>InCell</Group>
 											<ExtendedTooltip name="КонструкцииГруппаРасширеннаяПодсказка" id="66"/>
 											<ChildItems>
@@ -328,6 +336,7 @@
 													<DataPath>Конструкции.name</DataPath>
 													<ReadOnly>true</ReadOnly>
 													<EditMode>EnterOnInput</EditMode>
+													<Width>5</Width>
 													<ContextMenu name="КонструкцииНаименованиеКонтекстноеМеню" id="58"/>
 													<ExtendedTooltip name="КонструкцииНаименованиеРасширеннаяПодсказка" id="59"/>
 												</InputField>
@@ -357,6 +366,7 @@
 											<Representation>Tree</Representation>
 											<CommandBarLocation>None</CommandBarLocation>
 											<ReadOnly>true</ReadOnly>
+											<HeightInTableRows>3</HeightInTableRows>
 											<AutoInsertNewRow>true</AutoInsertNewRow>
 											<EnableStartDrag>true</EnableStartDrag>
 											<EnableDrag>true</EnableDrag>
@@ -392,12 +402,14 @@
 												<InputField name="СвойстваНаименование" id="135">
 													<DataPath>Свойства.Наименование</DataPath>
 													<EditMode>EnterOnInput</EditMode>
+													<Width>10</Width>
 													<ContextMenu name="СвойстваНаименованиеКонтекстноеМеню" id="136"/>
 													<ExtendedTooltip name="СвойстваНаименованиеРасширеннаяПодсказка" id="137"/>
 												</InputField>
 												<InputField name="СвойстваЗначение" id="138">
 													<DataPath>Свойства.Значение</DataPath>
 													<EditMode>EnterOnInput</EditMode>
+													<Width>10</Width>
 													<ContextMenu name="СвойстваЗначениеКонтекстноеМеню" id="139"/>
 													<ExtendedTooltip name="СвойстваЗначениеРасширеннаяПодсказка" id="140"/>
 												</InputField>
@@ -413,7 +425,12 @@
 										<InputField name="ИдКонструкции" id="119">
 											<DataPath>ИдКонструкции</DataPath>
 											<ReadOnly>true</ReadOnly>
-											<Width>24</Width>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ID</v8:content>
+												</v8:item>
+											</Title>
 											<HorizontalStretch>true</HorizontalStretch>
 											<ContextMenu name="ИдКонструкцииКонтекстноеМеню" id="120"/>
 											<ExtendedTooltip name="ИдКонструкцииРасширеннаяПодсказка" id="121"/>
@@ -530,6 +547,16 @@
 							<ContextMenu name="ТокенКонтекстноеМеню" id="80"/>
 							<ExtendedTooltip name="ТокенРасширеннаяПодсказка" id="81"/>
 						</InputField>
+						<CheckBoxField name="ВизуализацияНажатияМыши" id="195">
+							<DataPath>ВизуализацияНажатияМыши</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ВизуализацияНажатияМышиКонтекстноеМеню" id="196"/>
+							<ExtendedTooltip name="ВизуализацияНажатияМышиРасширеннаяПодсказка" id="197"/>
+							<Events>
+								<Event name="OnChange">ВизуализацияНажатияМышиПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
 					</ChildItems>
 				</Page>
 			</ChildItems>
@@ -617,7 +644,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Id</v8:content>
+							<v8:content>Идентификатор</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -844,6 +871,17 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВизуализацияНажатияМыши" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Визуализация нажатия мыши</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>
